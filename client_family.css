@@ -1,0 +1,266 @@
+
+/*------------*/
+
+.page-user-client-family .user-icon {
+  background: url("./images/general.png") no-repeat 100%/cover, transparent;
+  width: 70px;
+  height: 70px;
+}
+
+.profile-data .main-data p a {
+  color: #0296fd;
+}
+.page-user-client-family .family-card {
+  border: 1px solid rgb(213, 209, 209);
+  width: 29.2%;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 0px 3% 3%;
+  padding: 30px 0 18px 0;
+  border-radius: 10px;
+  background-color:rgb(242, 242, 242);
+}
+.page-user-client-family .first-line .family-card:first-child{
+  margin-left: 8px;
+  
+}
+.page-user-client-family .first-line {
+  text-align: center;
+}
+
+.page-user-client-family p.user-relation {
+  padding: 5px 10px;
+  color: #988d8d;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  width: 110px;
+  margin: 0 auto 15px auto;
+  border-radius: 17px;
+  font-size: 12px;
+  height: auto;
+  line-height: normal;
+  box-sizing: border-box;
+  font-family: 'Raleway';
+  font-weight: 600;
+}
+.page-user-client-family h2 {
+  color: #009cf0;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  float: left;
+}
+.page-user-client-family a.back-to-account {
+  background-color: transparent;
+  color: #7c7c7c;
+  padding: 7px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #d1d1d1;
+  display: inline-block;
+  transition: 0.3s;
+  font-family: Helvetica;
+  float: right;
+}
+
+.button-form {
+  float: right;
+  margin: 15px 0 20px 0;
+}
+.button-form button {
+  border: 1px solid #0296fd;
+  background-color: #0296fd;
+  color: #0296fd;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 0px;
+}
+
+
+
+.button-form a:hover {
+  color: #fff;
+  background-color: #007fc4;
+}
+
+ .button-form .del-btn{
+  font-size: 15px;
+  color: rgb(238, 237, 243);
+  padding: 9px 18px;
+  margin-right: 10px;
+  transition: all 0.25s linear;
+}
+
+
+.button-form a#remove-form,
+.button-form a#delete-btn,
+form#-client-family-delete-form input[value='Delete'] {
+  background-color: #c6293c;
+  border: 1px solid #c6293c;
+  padding: 9px 18px;
+  margin-right: 10px;
+  transition: all 0.25s linear;
+}
+.button-form a#remove-form:hover,
+.button-form a#delete-btn:hover,
+form#-client-family-delete-form input[value='Delete']:hover {
+  background-color: #a0091b;
+}
+.page-user-client-family form#-client-family-form span.close-form,
+.page-user-client-family form#-client-family-edit-form span.close-form,
+.page-user-client-family form#-client-family-delete-form span.close-form {
+  float: right;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+form#-create-family-form a,
+form#-client-family-delete-form a {
+  font-size: 0.875em;
+  font-family: "Helvetica Bold";
+  border-radius: 5px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #d1d1d1;
+  color: #908f8f;
+  padding: 9px 18px;
+  float: left;
+  line-height: normal;
+}
+
+
+.page-user-family-new #block-block-133,
+.page-user-client-family #block-block-133 {
+  display: none;
+}
+.page-user-client-family div#autocomplete {
+  background-color: #dedbdb;
+}
+body.page-user-family-new #post-content br,
+.page-user-client-family #post-content br {
+  display: block;
+}
+#create-form {
+  
+  background-size: 80px;
+}
+.page-user-client-family p.user-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 20px;
+}
+.page-user-client-family .family-view p {
+  display: inline-block;
+  padding: 0px;
+  margin: 10px 5px;
+  border-radius: 5px;
+}
+.page-user-client-family .family-view p.user-remove a {
+  padding: 9.5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.page-user-client-family .family-view p.user-remove a:hover {
+  background-color: #f5f5f5;
+}
+.family-view p.user-link {
+  background-color: #0296fd;
+  font-size: 16px;
+  font-weight: 600;
+  border-color: #0296fd;
+  line-height: normal;
+  font-size: 14px;
+  padding: 0px;
+  border-radius: 25px; 
+}
+.family-view p.user-link a {
+  color: #fff;
+  padding: 10.5px 15px;
+  display: inline-block;
+}
+.family-view p.user-link a:hover {
+  background-color: #007fc4;
+  border-radius: 5px;
+}
+.family-view p.user-remove a {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #989696;
+  font-size: 14px;
+}
+.button-form.add-member {
+  width: 100%;
+  text-align: center;
+  color: #009cf0;
+}
+.button-form.add-member a span {
+  margin-right: 8px;
+  background: url('images/plus-icon.svg') no-repeat 0px 4px;
+  width: 18px;
+  text-indent: -99999px;
+  display: inline-block;
+}
+.page-user-client-family .main-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+.page-user-client-family span.family-icon {
+  background: url('images/family-icon-heading.png') no-repeat center #fff;
+  background-size: 47px;
+  width: 47px;
+  height: 47px;
+  border-radius: 5px;
+  margin-right: 20px;
+  float: left;
+}
+
+#my-clients-table-view .table-clients tbody tr td:last-child {
+  margin-right: 0px;
+  text-align: right;
+}
+.client-family-overlay.overlay-visible {
+  background: rgb(31, 31, 31, 0.8);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99999;
+}
+.page-user-client-family .swal2-container {
+  z-index: 99999999 !important;
+}
+.page-user-client-family .search-field-div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.page-user-client-family .form-item-link-to {
+  margin-bottom: 15px !important;
+}
+.page-user-client-family .form-item-search-user {
+  margin-bottom: 0px !important;
+}
+.page-user-client-family .description {
+  text-align: left;
+  line-height: 15px;
+  margin-top: 5px;
+}
+.swal2-popup .swal2-content {
+  padding-top: 20px !important;
+}
+
+@media only screen and (max-width: 1366px) {
+  form#-client-family-form {
+    top: 18%;
+  }
+}

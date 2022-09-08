@@ -1,0 +1,6 @@
+name = Client Family Account
+description = Account to show family member of current user.
+core = 7.x
+package = Custom
+
+stylesheets[all][] = client_family.css

@@ -1,0 +1,61 @@
+<?php
+function client_family_schema() {
+
+  $schema['cFamily'] = array(
+    'description' => 'Table for Client Family',
+    'fields' => array(
+      'fid' => array(
+        'description' => 'Primary key for cFamily.',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'family_head' => array(
+        'description' => 'Head of family',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('fid'),
+  );
+
+
+  $schema['family_client'] = array(
+    'description' => 'Family Table',
+    'fields' => array(
+      'rid' => array(
+        'description' => 'Primary key for family_client.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'fid' => array(
+        'description' => 'Family ID',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+      'user_relation' => array(
+        'description' => 'Relation with family head',
+        'type' => 'varchar',
+        'length' => 1,
+        'not null' => FALSE,
+      ),
+      'user_id' => array(
+        'description' => 'User Id.',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => FALSE,
+      ),
+     
+    ),
+    'primary key' => array('rid'),
+  );
+  return $schema;
+}
+
+
+function client_family_update_7008(){
+    drupal_install_schema('client_family');
+}
