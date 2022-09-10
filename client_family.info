@@ -4,3 +4,4 @@ core = 7.x
 package = Custom
 
 stylesheets[all][] = client_family.css
+scripts[] = client_family.js

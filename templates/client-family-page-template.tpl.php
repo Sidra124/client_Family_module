@@ -8,6 +8,7 @@
   $all_members = _client_family_all_members();
   $get_members_count = count(_client_family_all_members());
 
+
 ?>
 <div id="client-family-search-form">
    <?php
@@ -55,7 +56,7 @@
           <p class="user-relation">Spouse</p>
           <div class="family-view">
             <?php
-              echo $delete_member = '<p class="user-remove"><a class="remove-form" onclick="get_id()" href="#">Delete Member</a></p>';
+              echo $delete_member = '<p class="user-remove"><a class="remove-form" href="#"  >Delete Member</a></p>';
            ?>
           </div>
         </div>
@@ -74,23 +75,24 @@
           <p class="user-relation"><?php echo cleanOutput($status_bnf); ?></p>
           <div class="family-view">
             <?php
-              echo $delete_member = '<p class="user-remove"><a class="remove-form" onclick="get_id()" href="#">Delete Member</a></p>';
+              echo $delete_member = '<p class="user-remove"><a class="remove-form" href="#">Delete Member</a></p>';
             ?>
           </div>
         </div>
       <?php }
            foreach($all_members as $key => $value){
-            $relation_name = $key;
-            $client_relation = client_relationship($value);
+            $relation_name =$value['name']; 
+            $client_relation = client_relationship($value['relation']);
             ?>
             <div class="family-card">
             <img class="user-icon">
               <p class="user-name"><?php echo cleanOutput($relation_name); ?></p>
               <p class="user-relation"><?php echo cleanOutput($client_relation); ?></p>
               <div class="family-view">
-                <?php
-                    echo $delete_member = '<p class="user-remove"><a class="remove-form" onclick="get_id()" href="#">Delete Member</a></p>';
-                 ?>
+                
+                    <!-- <p class="user-remove"><a class="remove-form remove_fam_member" data-user-id="<?php echo arg(1);?>" data-key="<?php echo $key;?>" href="#" >Delete Member</a></p> -->
+                  
+                    <p class="user-remove"><a class="remove-form remove_fam_member" data-user-id="<?php echo arg(1);?>" data-key="<?php echo $key;?>" href=" /user/<?php echo arg(1); ?>/client_family/<?php echo $key; ?>/delete" >Delete Member</a></p>
               </div>
             </div>
             <?php }
@@ -112,3 +114,4 @@
       </div> 
    </div>
 </div>
+

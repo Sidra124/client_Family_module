@@ -2,7 +2,14 @@
 function client_family_init(){
   
     drupal_add_js('sites/all/modules/custom/client_family/client_family.js', array('scope'=>'footer'));
-  
+    if(arg(0) == 'user' && arg(2) == 'client_family' && arg(4) == 'detail') {
+  //     $query = db_merge('cFamily')
+  //     ->fields(array(
+  //     'family_head' => arg(1),
+  // ))
+  // ->execute();
+  // drupal_goto('user/'.arg(1).'/client_family/'.arg(3).'/detail');
+     }
 }
 
 function client_family_menu(){
@@ -14,14 +21,27 @@ function client_family_menu(){
         'access callback' => 'user_is_logged_in',
         'type' => MENU_CALLBACK,
       );
-      $items['user/%/client_family/%/detail'] = array(
+
+      $items['user/%/client_family/detail'] = array(
         'title' => 'Family of Client',
         'page callback' => '_client_family',
         'access arguments' => array('access content'),
         'access callback' => 'user_is_logged_in',
         'type' => MENU_CALLBACK,
       );
+      $items['user/%/client_family/%/delete'] = array(
+        
+        'title' => 'Family of Client',
+        'page callback' => '_client_family_del',
+        'access arguments' => array('access content'),
+        'access callback' => 'user_is_logged_in',
+        'type' => MENU_CALLBACK,
+        
+      );
+
       return $items;
+
+
 }
 
 function client_family_theme(){
@@ -121,14 +141,16 @@ function _client_beneficiaries_status($user_id){
 function _client_family_all_members() {
   $family_members = array();
   $result = db_select('family_client', 'f')
-    ->fields('f', array('user_id', 'user_relation'))
+    ->fields('f', array('name', 'rid','user_relation'))
     ->condition('user_relation', '0', '<>')
     ->execute()->fetchAll();
   foreach ($result as $key => $value) {
-    $family_members[$value->user_id] = $value->user_relation;
+    $family_members[$value->rid] = ['name' => $value-> name ,'relation'=> $value -> user_relation];
   }
+  
   return $family_members;
 }
+
 
 function _client_family_form($form, $form_state) {
   $back = 'user/'.arg(1).'/client_family/'.arg(3).'/detail';
@@ -171,7 +193,7 @@ function _client_family_form_submit($form, $form_state) {
      db_insert('family_client')
       ->fields(array(
       'fid' => arg(3),
-      'user_id' => $form_state['values']['name'],
+      'name' => $form_state['values']['name'],
       'user_relation' => $form_state['values']['relation']
   ))
   ->execute();
@@ -213,6 +235,7 @@ function get_id(){
  
 
 function _client_family_del_member_form($form, $form_state) {
+  
   $form['close'] = array(
     '#markup' => '<h3>Delete this Family Member?</h3>',
   );
@@ -230,11 +253,16 @@ function _client_family_del_member_form($form, $form_state) {
 
 function _client_family_del_member_form_submit($form, $form_state) {
   $member_id = $form_state['values']['member'];
-  $is_head = _link_family_is_family_head($member_id);
-  if($is_head == 0) {
     $member_delte = db_delete('family_client')
-      ->condition('user_id', $member_id)
+      ->condition('name', $member_id)
       ->execute();
-    drupal_set_message('Member deleted succesfully!');
+    drupal_set_message('Member deleted successfully!');
   }
-}
+
+
+  function _client_family_del(){
+   $content = array();
+   $content[] = array('#markup'=> '<h2>helo</h2>');
+   $content[] = drupal_get_form('_client_family_del_member_form');
+   return $content;
+  }
