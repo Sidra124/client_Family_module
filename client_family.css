@@ -88,8 +88,6 @@
   float: left;
 }
 
-
-
 .page-user-client-family p.user-name {
   margin-bottom: 5px;
   font-weight: bold;
@@ -111,10 +109,6 @@
   transition: 0.3s;
   font-family: Helvetica;
   float: right;
-}
-
-.button-form {
-  
 }
 
 .button-form button {
@@ -155,14 +149,14 @@ form#-client-family-delete-form input[value='Delete']:hover {
   background-color: #a0091b;
 } */
 
-/* .page-user-client-family form#-client-family-form span.close-form,
+.page-user-client-family form#-client-family-form span.close-form,
 .page-user-client-family form#-client-family-edit-form span.close-form,
 .page-user-client-family form#-client-family-delete-form span.close-form {
   float: right;
   width: 15px;
   height: 15px;
   cursor: pointer;
-} */
+}
 
 form#-create-family-form a,
 form#-client-family-delete-form a {
@@ -178,6 +172,15 @@ form#-client-family-delete-form a {
   line-height: normal;
 }
 
+form#-client-family-del-member-form{
+  text-align: center;
+  margin-top: 100px;
+}
+
+form#-client-family-del-member-form h3{
+  font-display: bold;
+}
+
 
 .client-family-overlay.overlay-visible {
   background: rgb(31, 31, 31, 0.8);
@@ -186,7 +189,6 @@ form#-client-family-delete-form a {
   width: 100vw;
   z-index: 99999;
 }
-
 
 @media only screen and (max-width: 1366px) {
   form#-client-family-form {

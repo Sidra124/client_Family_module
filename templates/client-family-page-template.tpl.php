@@ -88,8 +88,6 @@
               <p class="user-relation"><?php echo cleanOutput($client_relation); ?></p>
               <div class="family-view">
                 
-                    <!-- <p class="user-remove"><a class="remove-form remove_fam_member" data-user-id="<?php echo arg(1);?>" data-key="<?php echo $key;?>" href="#" >Delete Member</a></p> -->
-                  
                     <p class="user-remove"><a class="remove-form remove_fam_member" data-user-id="<?php echo arg(1);?>" data-key="<?php echo $key;?>" href=" /user/<?php echo arg(1); ?>/client_family/<?php echo $key; ?>/delete" >Delete Member</a></p>
               </div>
             </div>
