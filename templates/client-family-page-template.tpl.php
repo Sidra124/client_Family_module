@@ -6,8 +6,6 @@
   $benf_name = _client_beneficiaries_name(arg(1));
   $benf_status = _client_beneficiaries_status(arg(1));
   $all_members = _client_family_all_members();
-  $get_members_count = count(_client_family_all_members());
-
 
 ?>
 <div id="client-family-search-form">
@@ -55,9 +53,9 @@
           <p class="user-name"><?php echo $family_head_spouse; ?></p>
           <p class="user-relation">Spouse</p>
           <div class="family-view">
-            <?php
-              echo $delete_member = '<p class="user-remove"><a class="remove-form" href="#"  >Delete Member</a></p>';
-           ?>
+            
+              <p class="user-remove"><a class="remove-form" href="/user/<?php echo arg(1); ?>/edit/personal_information">Delete Member</a></p>
+          
           </div>
         </div>
        <?php } ?>
@@ -74,9 +72,9 @@
           <p class="user-name"><?php echo cleanOutput($name_bnf); ?></p>
           <p class="user-relation"><?php echo cleanOutput($status_bnf); ?></p>
           <div class="family-view">
-            <?php
-              echo $delete_member = '<p class="user-remove"><a class="remove-form" href="#">Delete Member</a></p>';
-            ?>
+           
+               <p class="user-remove"><a class="remove-form" href="/user/<?php echo arg(1); ?>/edit/beneficiaries">Delete Member</a></p>
+            
           </div>
         </div>
       <?php }

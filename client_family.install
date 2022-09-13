@@ -1,78 +1,40 @@
 <?php
 function client_family_schema() {
-
-  $schema['client'] = array(
-    'description' => 'Table for Client Family',
-    'fields' => array(
-      'fid' => array(
-        'description' => 'Counter key for head.',
-        'type' => 'serial',
-        'not null' => TRUE,
-        'unsigned' => TRUE,
-      ),
-      'family_head' => array(
-        'description' => 'Head of family',
-        'type' => 'varchar',
-        'length' => 10,
-        'not null' => FALSE,
-      ),
-    ),
-    'primary key' => array('family_head'),
-  );
-
-
   $schema['family_client'] = array(
     'description' => 'Family Table',
     'fields' => array(
-      'rid' => array(
+      'id' => array(
         'description' => 'Primary key for family_client.',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
       ),
-      'user_relation' => array(
-        'description' => 'Relation with family head',
-        'type' => 'varchar',
-        'length' => 1,
-        'not null' => FALSE,
-      ),
-      'family_head' => array(
-        'description' => 'Head of family',
-        'type' => 'varchar',
-        'length' => 10,
-        'not null' => FALSE,
-      ),
       'user_id' => array(
-        'description' => 'User Id.',
+        'description' => 'id of client.',
         'type' => 'varchar',
-        'length' => 10,
+        'length' => 8,
+        'not null' => TRUE,
+      ),
+      'member_id' => array(
+        'description' => 'Member id.',
+        'type' => 'varchar',
+        'length' => 8,
+        'not null' => TRUE,
+      ),
+      'member_name' => array(
+        'description' => 'Member name.',
+        'type' => 'text',
         'not null' => FALSE,
       ),
-     
+      'member_relation' => array(
+        'description' => 'Relation with family head',
+        'type' => 'text',
+        'not null' => FALSE,
+      ),
     ),
-    'primary key' => array('rid'),
+    'primary key' => array('id'),
   );
   return $schema;
 }
 
-
-function client_family_update_7008(){
-    drupal_install_schema('client_family');
-}
-
-
-function client_family_update_7103() {
-  db_change_field('family_client', 'user_id', 'name',
-    array(
-      'type' => 'text', 
-      'length' => 50,
-      'description' => "name of member",
-      'not null' => FALSE,)
-  );
-}
-
-
-function client_family_update_7110() {
-  db_rename_table('cFamily', 'client');
-}
 
